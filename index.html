@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Knights | Cybersecurity Resource Hub for Education</title>
+<meta name="description" content="Cyber Knights is a practical, publicly accessible cybersecurity resource hub built for schools, teachers, students and parents.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+        colors: { cknavy: '#050b18' }
+      }
+    }
+  }
+</script>
+
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-sans antialiased">
+
+<div class="ck-bg"></div>
+<div class="ck-grid"></div>
+<div class="ck-orb ck-orb-1"></div>
+<div class="ck-orb ck-orb-2"></div>
+<div class="ck-orb ck-orb-3"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="fixed top-0 inset-x-0 z-50 glass-nav">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assets/img/logo.svg" alt="Cyber Knights shield logo" class="h-9 w-9 md:h-10 md:w-10 drop-shadow-[0_0_12px_rgba(56,189,248,0.45)] transition-transform group-hover:scale-105">
+        <span class="text-lg md:text-xl font-extrabold tracking-tight text-white">Cyber <span class="ck-gradient-text">Knights</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" data-nav-link="index.html" class="ck-nav-link">Home &amp; About</a>
+        <a href="knowledge-base.html" data-nav-link="knowledge-base.html" class="ck-nav-link">Knowledge Base</a>
+        <a href="best-practices.html" data-nav-link="best-practices.html" class="ck-nav-link">Best Practices</a>
+        <a href="news.html" data-nav-link="news.html" class="ck-nav-link">News</a>
+        <a href="tools-resources.html" data-nav-link="tools-resources.html" class="ck-nav-link">Tools &amp; Resources</a>
+      </nav>
+
+      <div class="hidden md:flex items-center">
+        <a href="best-practices.html" class="btn-primary text-sm font-semibold text-white px-5 py-2.5 rounded-full inline-flex items-center gap-2">
+          <i class="fa-solid fa-download text-xs"></i> Get the Checklists
+        </a>
+      </div>
+
+      <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden btn-glass h-10 w-10 rounded-lg flex items-center justify-center text-white">
+        <i class="fa-solid fa-bars icon-open"></i>
+        <i class="fa-solid fa-xmark icon-close hidden"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden hidden pb-4">
+      <div class="flex flex-col gap-1 pt-3 border-t border-white/10 text-sm font-medium">
+        <a href="index.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">Home &amp; About</a>
+        <a href="knowledge-base.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">Knowledge Base</a>
+        <a href="best-practices.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">Best Practices</a>
+        <a href="news.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">News</a>
+        <a href="tools-resources.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">Tools &amp; Resources</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<main class="pt-28 md:pt-32">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="glass-strong rounded-3xl px-6 py-12 md:px-16 md:py-20 relative overflow-hidden reveal">
+      <div class="max-w-3xl">
+        <span class="ck-badge inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full mb-6">
+          <i class="fa-solid fa-shield-halved"></i> Education Cybersecurity Initiative
+        </span>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white">
+          Practical cybersecurity guidance, <span class="ck-gradient-text">built for schools.</span>
+        </h1>
+        <p class="mt-6 text-base md:text-lg text-slate-300 max-w-2xl">
+          Cyber Knights is a publicly accessible resource hub that helps teachers, administrators, IT staff,
+          students, and parents recognize common cyber risks and take simple, actionable steps to reduce them —
+          no technical background required.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="knowledge-base.html" class="btn-primary text-white font-semibold px-6 py-3 rounded-full inline-flex items-center gap-2">
+            <i class="fa-solid fa-graduation-cap"></i> Explore the Knowledge Base
+          </a>
+          <a href="best-practices.html" class="btn-glass text-white font-semibold px-6 py-3 rounded-full inline-flex items-center gap-2">
+            <i class="fa-solid fa-list-check"></i> Download Checklists
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-6">
+      <div class="glass-card p-5 md:p-6 text-center reveal">
+        <p class="stat-number text-3xl md:text-4xl font-extrabold ck-gradient-text"><span data-counter="217" data-suffix="">0</span></p>
+        <p class="text-xs md:text-sm text-slate-400 mt-2">Ransomware attacks on education (Apr 2023–Apr 2024)</p>
+      </div>
+      <div class="glass-card p-5 md:p-6 text-center reveal">
+        <p class="stat-number text-3xl md:text-4xl font-extrabold ck-gradient-text">+<span data-counter="35" data-suffix="%">0</span></p>
+        <p class="text-xs md:text-sm text-slate-400 mt-2">Year-over-year increase in education ransomware</p>
+      </div>
+      <div class="glass-card p-5 md:p-6 text-center reveal">
+        <p class="stat-number text-3xl md:text-4xl font-extrabold ck-gradient-text"><span data-counter="82" data-suffix="%">0</span></p>
+        <p class="text-xs md:text-sm text-slate-400 mt-2">School districts reporting an incident (Jul 2023–Dec 2024)</p>
+      </div>
+      <div class="glass-card p-5 md:p-6 text-center reveal">
+        <p class="stat-number text-3xl md:text-4xl font-extrabold ck-gradient-text">#<span data-counter="4" data-suffix="">0</span></p>
+        <p class="text-xs md:text-sm text-slate-400 mt-2">Most-targeted sector by ransomware, overall</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 md:mt-32 scroll-mt-24">
+    <div class="text-center max-w-3xl mx-auto reveal">
+      <span class="ck-badge inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
+        <i class="fa-solid fa-circle-info"></i> About the Project
+      </span>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white">Why Cyber Knights exists</h2>
+      <p class="mt-4 text-slate-300">
+        Schools, colleges, and universities now hold large volumes of sensitive information — student records,
+        exam data, staff payroll, and research material — and depend on digital platforms for teaching,
+        communication, and administration. That dependence has made education an increasingly attractive
+        target for cybercriminals, while leaving it among the least prepared sectors to defend itself.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-14">
+      <div class="glass-card p-8 reveal">
+        <div class="icon-tile mb-5"><i class="fa-solid fa-book-open-reader text-sky-300 text-xl"></i></div>
+        <h3 class="text-xl font-bold text-white mb-3">Our Introduction</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          This site introduces the <strong class="text-white">Cybersecurity Resource Hub</strong>, built by the
+          Cyber Knights Team as a practical, easy-to-understand cybersecurity guide for the education sector.
+          It combines short audio and video explainers with downloadable checklists so that teachers,
+          administrators, IT staff, students, and parents can quickly understand common cyber risks in schools
+          and take simple, actionable steps to reduce them.
+        </p>
+      </div>
+      <div class="glass-card p-8 reveal">
+        <div class="icon-tile mb-5"><i class="fa-solid fa-chart-line text-purple-300 text-xl"></i></div>
+        <h3 class="text-xl font-bold text-white mb-3">The Evidence</h3>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Industry threat reports confirm this exposure is not theoretical. Zscaler ThreatLabz recorded a 35%+
+          year-over-year rise in education ransomware attacks, and the Centre for Internet Security found 82%
+          of surveyed school districts experienced at least one cybersecurity incident in an 18-month period.
+          Research also shows the core weakness isn't only technology — it's awareness and habit.
+        </p>
+      </div>
+    </div>
+
+    <!-- Problem statement -->
+    <div class="mt-16">
+      <h3 class="text-2xl md:text-3xl font-bold text-white text-center reveal">The gap we're closing</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
+        <div class="glass-card p-6 reveal">
+          <i class="fa-solid fa-magnifying-glass text-sky-300 text-xl mb-4"></i>
+          <h4 class="font-semibold text-white mb-2">Limited Awareness</h4>
+          <p class="text-slate-400 text-sm">Many staff and students can't recognize phishing, weak passwords, or unsafe Wi-Fi use.</p>
+        </div>
+        <div class="glass-card p-6 reveal">
+          <i class="fa-solid fa-coins text-sky-300 text-xl mb-4"></i>
+          <h4 class="font-semibold text-white mb-2">Budget Constraints</h4>
+          <p class="text-slate-400 text-sm">Schools rarely have dedicated cybersecurity teams or funding for awareness campaigns.</p>
+        </div>
+        <div class="glass-card p-6 reveal">
+          <i class="fa-solid fa-shuffle text-sky-300 text-xl mb-4"></i>
+          <h4 class="font-semibold text-white mb-2">Scattered Information</h4>
+          <p class="text-slate-400 text-sm">Existing guidance is written for IT professionals and spread across too many sources.</p>
+        </div>
+        <div class="glass-card p-6 reveal">
+          <i class="fa-solid fa-triangle-exclamation text-sky-300 text-xl mb-4"></i>
+          <h4 class="font-semibold text-white mb-2">Rising Consequences</h4>
+          <p class="text-slate-400 text-sm">Attacks cancel classes, delay exams, and expose student data for weeks at a time.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission -->
+    <div class="glass-strong rounded-3xl p-8 md:p-12 mt-16 reveal">
+      <div class="grid md:grid-cols-3 gap-10 items-start">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-3">Our Mission</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            To design, build, and publish a live, shareable Cybersecurity Resource Hub that equips the
+            education community with practical knowledge and tools — guided by the NIST Cybersecurity
+            Framework's approach to identifying, protecting, detecting, responding to, and recovering from
+            threats — translated into plain, non-technical language.
+          </p>
+        </div>
+        <div class="md:col-span-2 grid sm:grid-cols-2 gap-4">
+          <div class="flex items-start gap-3">
+            <i class="fa-solid fa-check text-sky-400 mt-1"></i>
+            <p class="text-sm text-slate-300">Summarize the most common school-facing cyber threats in plain language.</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <i class="fa-solid fa-check text-sky-400 mt-1"></i>
+            <p class="text-sm text-slate-300">Publish an organized, easy-to-navigate public website.</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <i class="fa-solid fa-check text-sky-400 mt-1"></i>
+            <p class="text-sm text-slate-300">Produce original audio/video explainers on key concepts.</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <i class="fa-solid fa-check text-sky-400 mt-1"></i>
+            <p class="text-sm text-slate-300">Ship downloadable checklists to assess everyday cyber hygiene.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team -->
+    <div class="mt-16 text-center">
+      <h3 class="text-2xl md:text-3xl font-bold text-white reveal">Prepared by the Cyber Knights Team</h3>
+      <div class="flex flex-wrap justify-center gap-3 mt-8 reveal">
+        <span class="glass px-5 py-2.5 rounded-full text-sm text-slate-200"><i class="fa-solid fa-user-shield text-sky-400 mr-2"></i>Bagaya Paulah Keely</span>
+        <span class="glass px-5 py-2.5 rounded-full text-sm text-slate-200"><i class="fa-solid fa-user-shield text-sky-400 mr-2"></i>Eyinle Bolaji Daniel</span>
+        <span class="glass px-5 py-2.5 rounded-full text-sm text-slate-200"><i class="fa-solid fa-user-shield text-sky-400 mr-2"></i>Oseh Praise Ifeanyichukwu</span>
+        <span class="glass px-5 py-2.5 rounded-full text-sm text-slate-200"><i class="fa-solid fa-user-shield text-sky-400 mr-2"></i>Nureni Ayofe Azeez</span>
+        <span class="glass px-5 py-2.5 rounded-full text-sm text-slate-200"><i class="fa-solid fa-user-shield text-sky-400 mr-2"></i>Shittu Quadri</span>
+        <span class="glass px-5 py-2.5 rounded-full text-sm text-slate-200"><i class="fa-solid fa-user-shield text-sky-400 mr-2"></i>Karabo Mokatse</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPLORE THE HUB ===================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 md:mt-32">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white">Explore the Hub</h2>
+      <p class="mt-4 text-slate-300">Four sections, one goal: making cyber safety simple for the whole school community.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+      <a href="knowledge-base.html" class="glass-card p-7 reveal">
+        <div class="icon-tile mb-5"><i class="fa-solid fa-headphones-simple text-sky-300 text-xl"></i></div>
+        <h3 class="font-bold text-white text-lg mb-2">Knowledge Base</h3>
+        <p class="text-slate-400 text-sm">Audio &amp; video explainers on core cybersecurity concepts.</p>
+        <span class="inline-flex items-center gap-1 text-sky-400 text-sm font-semibold mt-4">Visit <i class="fa-solid fa-arrow-right text-xs"></i></span>
+      </a>
+      <a href="best-practices.html" class="glass-card p-7 reveal">
+        <div class="icon-tile mb-5"><i class="fa-solid fa-list-check text-purple-300 text-xl"></i></div>
+        <h3 class="font-bold text-white text-lg mb-2">Best Practices</h3>
+        <p class="text-slate-400 text-sm">Five downloadable checklists for everyday cyber hygiene.</p>
+        <span class="inline-flex items-center gap-1 text-sky-400 text-sm font-semibold mt-4">Visit <i class="fa-solid fa-arrow-right text-xs"></i></span>
+      </a>
+      <a href="news.html" class="glass-card p-7 reveal">
+        <div class="icon-tile mb-5"><i class="fa-solid fa-newspaper text-amber-300 text-xl"></i></div>
+        <h3 class="font-bold text-white text-lg mb-2">News</h3>
+        <p class="text-slate-400 text-sm">Top education-sector cybersecurity news sources.</p>
+        <span class="inline-flex items-center gap-1 text-sky-400 text-sm font-semibold mt-4">Visit <i class="fa-solid fa-arrow-right text-xs"></i></span>
+      </a>
+      <a href="tools-resources.html" class="glass-card p-7 reveal">
+        <div class="icon-tile mb-5"><i class="fa-solid fa-toolbox text-emerald-300 text-xl"></i></div>
+        <h3 class="font-bold text-white text-lg mb-2">Tools &amp; Resources</h3>
+        <p class="text-slate-400 text-sm">Trusted tools, grouped by category, linked to their official sites.</p>
+        <span class="inline-flex items-center gap-1 text-sky-400 text-sm font-semibold mt-4">Visit <i class="fa-solid fa-arrow-right text-xs"></i></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 md:mt-32">
+    <div class="glass-strong rounded-3xl px-8 py-14 md:px-16 text-center reveal">
+      <i class="fa-solid fa-shield-halved text-4xl ck-gradient-text mb-4"></i>
+      <h2 class="text-2xl md:text-4xl font-extrabold text-white">Cyber safety is a shared responsibility.</h2>
+      <p class="mt-4 text-slate-300 max-w-xl mx-auto">Start with one checklist, one video, or one conversation in your classroom this week.</p>
+      <a href="best-practices.html" class="btn-primary inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-full mt-8">
+        <i class="fa-solid fa-download"></i> Get Started
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="relative mt-24 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid md:grid-cols-4 gap-10">
+      <div>
+        <a href="index.html" class="flex items-center gap-3 mb-4">
+          <img src="assets/img/logo.svg" alt="Cyber Knights logo" class="h-9 w-9">
+          <span class="text-lg font-extrabold text-white">Cyber <span class="ck-gradient-text">Knights</span></span>
+        </a>
+        <p class="text-slate-400 text-sm leading-relaxed">A practical, publicly accessible cybersecurity guide for schools, colleges, and universities.</p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Sitemap</h4>
+        <ul class="space-y-2.5 text-sm text-slate-400">
+          <li><a href="index.html" class="hover:text-sky-400 transition-colors">Home &amp; About</a></li>
+          <li><a href="knowledge-base.html" class="hover:text-sky-400 transition-colors">Knowledge Base</a></li>
+          <li><a href="best-practices.html" class="hover:text-sky-400 transition-colors">Best Practices</a></li>
+          <li><a href="news.html" class="hover:text-sky-400 transition-colors">News</a></li>
+          <li><a href="tools-resources.html" class="hover:text-sky-400 transition-colors">Tools &amp; Resources</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
+        <ul class="space-y-2.5 text-sm text-slate-400">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-sky-400 w-4"></i> contact@cyberknightshub.org</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-sky-400 w-4"></i> +1 (000) 000-0000</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-sky-400 w-4"></i> Cyber Knights Team — Education Cybersecurity Initiative</li>
+        </ul>
+        <p class="text-xs text-slate-500 mt-2">*Placeholder contact details — replace with your team's real channels.</p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Follow Us</h4>
+        <div class="flex gap-3">
+          <a href="#" aria-label="X / Twitter" class="btn-glass h-10 w-10 rounded-full flex items-center justify-center text-white"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn" class="btn-glass h-10 w-10 rounded-full flex items-center justify-center text-white"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube" class="btn-glass h-10 w-10 rounded-full flex items-center justify-center text-white"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Instagram" class="btn-glass h-10 w-10 rounded-full flex items-center justify-center text-white"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p class="text-xs text-slate-500 mt-4">*Social links are placeholders — connect your official accounts.</p>
+      </div>
+    </div>
+
+    <div class="divider-glow my-10"></div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <p>&copy; <span data-year>2026</span> Cyber Knights. Built for the education community.</p>
+      <p>Concept &amp; content by the Cyber Knights Team.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full btn-glass text-white flex items-center justify-center opacity-0 pointer-events-none transition-opacity">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

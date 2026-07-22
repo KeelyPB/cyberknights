@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Practices | Cyber Knights</title>
+<meta name="description" content="Five downloadable checklists to help schools, teachers, and students assess and improve their cyber hygiene.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: { fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] }, colors: { cknavy: '#050b18' } } }
+  }
+</script>
+
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-sans antialiased">
+
+<div class="ck-bg"></div>
+<div class="ck-grid"></div>
+<div class="ck-orb ck-orb-1"></div>
+<div class="ck-orb ck-orb-2"></div>
+<div class="ck-orb ck-orb-3"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="fixed top-0 inset-x-0 z-50 glass-nav">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assets/img/logo.svg" alt="Cyber Knights shield logo" class="h-9 w-9 md:h-10 md:w-10 drop-shadow-[0_0_12px_rgba(56,189,248,0.45)] transition-transform group-hover:scale-105">
+        <span class="text-lg md:text-xl font-extrabold tracking-tight text-white">Cyber <span class="ck-gradient-text">Knights</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" data-nav-link="index.html" class="ck-nav-link">Home &amp; About</a>
+        <a href="knowledge-base.html" data-nav-link="knowledge-base.html" class="ck-nav-link">Knowledge Base</a>
+        <a href="best-practices.html" data-nav-link="best-practices.html" class="ck-nav-link">Best Practices</a>
+        <a href="news.html" data-nav-link="news.html" class="ck-nav-link">News</a>
+        <a href="tools-resources.html" data-nav-link="tools-resources.html" class="ck-nav-link">Tools &amp; Resources</a>
+      </nav>
+
+      <div class="hidden md:flex items-center">
+        <a href="#checklists" class="btn-primary text-sm font-semibold text-white px-5 py-2.5 rounded-full inline-flex items-center gap-2">
+          <i class="fa-solid fa-download text-xs"></i> Get the Checklists
+        </a>
+      </div>
+
+      <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden btn-glass h-10 w-10 rounded-lg flex items-center justify-center text-white">
+        <i class="fa-solid fa-bars icon-open"></i>
+        <i class="fa-solid fa-xmark icon-close hidden"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden hidden pb-4">
+      <div class="flex flex-col gap-1 pt-3 border-t border-white/10 text-sm font-medium">
+        <a href="index.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">Home &amp; About</a>
+        <a href="knowledge-base.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">Knowledge Base</a>
+        <a href="best-practices.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">Best Practices</a>
+        <a href="news.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">News</a>
+        <a href="tools-resources.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">Tools &amp; Resources</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="pt-28 md:pt-32">
+
+  <!-- ===================== PAGE HEADER ===================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+    <span class="ck-badge inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
+      <i class="fa-solid fa-list-check"></i> Best Practices
+    </span>
+    <h1 class="text-3xl md:text-5xl font-extrabold text-white">Five checklists. Five habits worth building.</h1>
+    <p class="mt-4 text-slate-300 max-w-2xl mx-auto">
+      Print them, pin them in the staff room, or work through them with your class. Each checklist distills one
+      cybersecurity topic into a handful of steps anyone can follow.
+    </p>
+  </section>
+
+  <!-- ===================== CHECKLISTS ===================== -->
+  <section id="checklists" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-24 scroll-mt-24">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- 1 -->
+      <article class="glass-card p-7 flex flex-col reveal">
+        <div class="icon-tile mb-5"><i class="fa-solid fa-fish-fins text-sky-300 text-xl"></i></div>
+        <h3 class="font-bold text-white text-lg mb-2">Phishing Awareness Checklist</h3>
+        <p class="text-slate-400 text-sm flex-1">Spot suspicious senders, links, and urgency tactics before you click or reply.</p>
+        <div class="flex items-center justify-between mt-6 text-xs text-slate-500">
+          <span><i class="fa-solid fa-file-pdf text-red-400 mr-1"></i>PDF · 1 page</span>
+        </div>
+        <button type="button" data-download-stub="Phishing Awareness Checklist" class="btn-primary w-full mt-4 text-white font-semibold py-2.5 rounded-xl inline-flex items-center justify-center gap-2">
+          <i class="fa-solid fa-download"></i> Download
+        </button>
+      </article>
+
+      <!-- 2 -->
+      <article class="glass-card p-7 flex flex-col reveal">
+        <div class="icon-tile mb-5"><i class="fa-solid fa-key text-purple-300 text-xl"></i></div>
+        <h3 class="font-bold text-white text-lg mb-2">Password &amp; Account Security Checklist</h3>
+        <p class="text-slate-400 text-sm flex-1">Strong passwords, multi-factor authentication, and safe account recovery steps.</p>
+        <div class="flex items-center justify-between mt-6 text-xs text-slate-500">
+          <span><i class="fa-solid fa-file-pdf text-red-400 mr-1"></i>PDF · 1 page</span>
+        </div>
+        <button type="button" data-download-stub="Password &amp; Account Security Checklist" class="btn-primary w-full mt-4 text-white font-semibold py-2.5 rounded-xl inline-flex items-center justify-center gap-2">
+          <i class="fa-solid fa-download"></i> Download
+        </button>
+      </article>
+
+      <!-- 3 -->
+      <article class="glass-card p-7 flex flex-col reveal">
+        <div class="icon-tile mb-5"><i class="fa-solid fa-wifi text-emerald-300 text-xl"></i></div>
+        <h3 class="font-bold text-white text-lg mb-2">Safe Wi-Fi &amp; Device Use Checklist</h3>
+        <p class="text-slate-400 text-sm flex-1">Guidance for using school networks, personal devices, and public hotspots safely.</p>
+        <div class="flex items-center justify-between mt-6 text-xs text-slate-500">
+          <span><i class="fa-solid fa-file-pdf text-red-400 mr-1"></i>PDF · 1 page</span>
+        </div>
+        <button type="button" data-download-stub="Safe Wi-Fi &amp; Device Use Checklist" class="btn-primary w-full mt-4 text-white font-semibold py-2.5 rounded-xl inline-flex items-center justify-center gap-2">
+          <i class="fa-solid fa-download"></i> Download
+        </button>
+      </article>
+
+      <!-- 4 -->
+      <article class="glass-card p-7 flex flex-col reveal">
+        <div class="icon-tile mb-5"><i class="fa-solid fa-user-shield text-amber-300 text-xl"></i></div>
+        <h3 class="font-bold text-white text-lg mb-2">Data Protection &amp; Privacy Checklist</h3>
+        <p class="text-slate-400 text-sm flex-1">Handling student and staff records responsibly, from storage to sharing.</p>
+        <div class="flex items-center justify-between mt-6 text-xs text-slate-500">
+          <span><i class="fa-solid fa-file-pdf text-red-400 mr-1"></i>PDF · 2 pages</span>
+        </div>
+        <button type="button" data-download-stub="Data Protection &amp; Privacy Checklist" class="btn-primary w-full mt-4 text-white font-semibold py-2.5 rounded-xl inline-flex items-center justify-center gap-2">
+          <i class="fa-solid fa-download"></i> Download
+        </button>
+      </article>
+
+      <!-- 5 -->
+      <article class="glass-card p-7 flex flex-col reveal">
+        <div class="icon-tile mb-5"><i class="fa-solid fa-triangle-exclamation text-rose-300 text-xl"></i></div>
+        <h3 class="font-bold text-white text-lg mb-2">Incident Response &amp; Reporting Checklist</h3>
+        <p class="text-slate-400 text-sm flex-1">Who to contact, what to preserve, and what to do first when something goes wrong.</p>
+        <div class="flex items-center justify-between mt-6 text-xs text-slate-500">
+          <span><i class="fa-solid fa-file-pdf text-red-400 mr-1"></i>PDF · 1 page</span>
+        </div>
+        <button type="button" data-download-stub="Incident Response &amp; Reporting Checklist" class="btn-primary w-full mt-4 text-white font-semibold py-2.5 rounded-xl inline-flex items-center justify-center gap-2">
+          <i class="fa-solid fa-download"></i> Download
+        </button>
+      </article>
+
+      <!-- 6th slot: bundle card -->
+      <article class="glass-strong p-7 flex flex-col justify-center items-center text-center reveal">
+        <i class="fa-solid fa-layer-group text-3xl ck-gradient-text mb-4"></i>
+        <h3 class="font-bold text-white text-lg mb-2">Get the Full Set</h3>
+        <p class="text-slate-400 text-sm mb-5">All five checklists, bundled into one printable pack.</p>
+        <button type="button" data-download-stub="Full Checklist Bundle" class="btn-glass w-full text-white font-semibold py-2.5 rounded-xl inline-flex items-center justify-center gap-2">
+          <i class="fa-solid fa-box-archive"></i> Download Bundle
+        </button>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="relative mt-24 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid md:grid-cols-4 gap-10">
+      <div>
+        <a href="index.html" class="flex items-center gap-3 mb-4">
+          <img src="assets/img/logo.svg" alt="Cyber Knights logo" class="h-9 w-9">
+          <span class="text-lg font-extrabold text-white">Cyber <span class="ck-gradient-text">Knights</span></span>
+        </a>
+        <p class="text-slate-400 text-sm leading-relaxed">A practical, publicly accessible cybersecurity guide for schools, colleges, and universities.</p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Sitemap</h4>
+        <ul class="space-y-2.5 text-sm text-slate-400">
+          <li><a href="index.html" class="hover:text-sky-400 transition-colors">Home &amp; About</a></li>
+          <li><a href="knowledge-base.html" class="hover:text-sky-400 transition-colors">Knowledge Base</a></li>
+          <li><a href="best-practices.html" class="hover:text-sky-400 transition-colors">Best Practices</a></li>
+          <li><a href="news.html" class="hover:text-sky-400 transition-colors">News</a></li>
+          <li><a href="tools-resources.html" class="hover:text-sky-400 transition-colors">Tools &amp; Resources</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
+        <ul class="space-y-2.5 text-sm text-slate-400">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-sky-400 w-4"></i> contact@cyberknightshub.org</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-sky-400 w-4"></i> +1 (000) 000-0000</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-sky-400 w-4"></i> Cyber Knights Team — Education Cybersecurity Initiative</li>
+        </ul>
+        <p class="text-xs text-slate-500 mt-2">*Placeholder contact details — replace with your team's real channels.</p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Follow Us</h4>
+        <div class="flex gap-3">
+          <a href="#" aria-label="X / Twitter" class="btn-glass h-10 w-10 rounded-full flex items-center justify-center text-white"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn" class="btn-glass h-10 w-10 rounded-full flex items-center justify-center text-white"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube" class="btn-glass h-10 w-10 rounded-full flex items-center justify-center text-white"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Instagram" class="btn-glass h-10 w-10 rounded-full flex items-center justify-center text-white"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p class="text-xs text-slate-500 mt-4">*Social links are placeholders — connect your official accounts.</p>
+      </div>
+    </div>
+
+    <div class="divider-glow my-10"></div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <p>&copy; <span data-year>2026</span> Cyber Knights. Built for the education community.</p>
+      <p>Concept &amp; content by the Cyber Knights Team.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full btn-glass text-white flex items-center justify-center opacity-0 pointer-events-none transition-opacity">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

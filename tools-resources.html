@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools & Resources | Cyber Knights</title>
+<meta name="description" content="Trusted cybersecurity tools for schools, grouped by category, linked to their official websites.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: { fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] }, colors: { cknavy: '#050b18' } } }
+  }
+</script>
+
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-sans antialiased">
+
+<div class="ck-bg"></div>
+<div class="ck-grid"></div>
+<div class="ck-orb ck-orb-1"></div>
+<div class="ck-orb ck-orb-2"></div>
+<div class="ck-orb ck-orb-3"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="fixed top-0 inset-x-0 z-50 glass-nav">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assets/img/logo.svg" alt="Cyber Knights shield logo" class="h-9 w-9 md:h-10 md:w-10 drop-shadow-[0_0_12px_rgba(56,189,248,0.45)] transition-transform group-hover:scale-105">
+        <span class="text-lg md:text-xl font-extrabold tracking-tight text-white">Cyber <span class="ck-gradient-text">Knights</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" data-nav-link="index.html" class="ck-nav-link">Home &amp; About</a>
+        <a href="knowledge-base.html" data-nav-link="knowledge-base.html" class="ck-nav-link">Knowledge Base</a>
+        <a href="best-practices.html" data-nav-link="best-practices.html" class="ck-nav-link">Best Practices</a>
+        <a href="news.html" data-nav-link="news.html" class="ck-nav-link">News</a>
+        <a href="tools-resources.html" data-nav-link="tools-resources.html" class="ck-nav-link">Tools &amp; Resources</a>
+      </nav>
+
+      <div class="hidden md:flex items-center">
+        <a href="best-practices.html" class="btn-primary text-sm font-semibold text-white px-5 py-2.5 rounded-full inline-flex items-center gap-2">
+          <i class="fa-solid fa-download text-xs"></i> Get the Checklists
+        </a>
+      </div>
+
+      <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden btn-glass h-10 w-10 rounded-lg flex items-center justify-center text-white">
+        <i class="fa-solid fa-bars icon-open"></i>
+        <i class="fa-solid fa-xmark icon-close hidden"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden hidden pb-4">
+      <div class="flex flex-col gap-1 pt-3 border-t border-white/10 text-sm font-medium">
+        <a href="index.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">Home &amp; About</a>
+        <a href="knowledge-base.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">Knowledge Base</a>
+        <a href="best-practices.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">Best Practices</a>
+        <a href="news.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">News</a>
+        <a href="tools-resources.html" class="px-3 py-2.5 rounded-lg hover:bg-white/5 text-slate-200">Tools &amp; Resources</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="pt-28 md:pt-32">
+
+  <!-- ===================== PAGE HEADER ===================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+    <span class="ck-badge inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
+      <i class="fa-solid fa-toolbox"></i> Tools &amp; Resources
+    </span>
+    <h1 class="text-3xl md:text-5xl font-extrabold text-white">Trusted tools, grouped by job-to-be-done.</h1>
+    <p class="mt-4 text-slate-300 max-w-2xl mx-auto">
+      We don't endorse any single vendor — these are widely used, reputable tools organized by category so your
+      school can compare options quickly. Each logo links to the tool's official website.
+    </p>
+  </section>
+
+  <!-- ===================== QUICK JUMP ===================== -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+    <div class="flex flex-wrap justify-center gap-3 reveal">
+      <a href="#password-managers" class="btn-glass px-4 py-2 rounded-full text-sm text-slate-200"><i class="fa-solid fa-key mr-2 text-sky-400"></i>Password Managers</a>
+      <a href="#endpoint-protection" class="btn-glass px-4 py-2 rounded-full text-sm text-slate-200"><i class="fa-solid fa-shield-virus mr-2 text-sky-400"></i>Endpoint Protection</a>
+      <a href="#network-filtering" class="btn-glass px-4 py-2 rounded-full text-sm text-slate-200"><i class="fa-solid fa-globe mr-2 text-sky-400"></i>Network &amp; Web Filtering</a>
+      <a href="#awareness-training" class="btn-glass px-4 py-2 rounded-full text-sm text-slate-200"><i class="fa-solid fa-graduation-cap mr-2 text-sky-400"></i>Awareness Training</a>
+      <a href="#backup-monitoring" class="btn-glass px-4 py-2 rounded-full text-sm text-slate-200"><i class="fa-solid fa-cloud-arrow-up mr-2 text-sky-400"></i>Backup &amp; Breach Monitoring</a>
+    </div>
+  </section>
+
+  <!-- ===================== GROUP: PASSWORD MANAGERS ===================== -->
+  <section id="password-managers" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 scroll-mt-28">
+    <div class="flex items-center gap-3 mb-8 reveal">
+      <div class="icon-tile"><i class="fa-solid fa-key text-sky-300 text-xl"></i></div>
+      <div>
+        <h2 class="text-2xl font-bold text-white">Password Managers</h2>
+        <p class="text-slate-400 text-sm">Generate, store, and autofill strong unique passwords for every account.</p>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a href="https://bitwarden.com" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=bitwarden.com" alt="Bitwarden logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">Bitwarden</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Open-source, free tier available</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+      <a href="https://1password.com" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=1password.com" alt="1Password logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">1Password</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Strong team &amp; family plans</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+      <a href="https://www.lastpass.com" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=lastpass.com" alt="LastPass logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">LastPass</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Widely deployed in schools</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== GROUP: ENDPOINT PROTECTION ===================== -->
+  <section id="endpoint-protection" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 scroll-mt-28">
+    <div class="flex items-center gap-3 mb-8 reveal">
+      <div class="icon-tile"><i class="fa-solid fa-shield-virus text-purple-300 text-xl"></i></div>
+      <div>
+        <h2 class="text-2xl font-bold text-white">Endpoint Protection</h2>
+        <p class="text-slate-400 text-sm">Antivirus and anti-malware coverage for school laptops and lab computers.</p>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a href="https://www.microsoft.com/en-us/windows/comprehensive-security" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=microsoft.com" alt="Microsoft Defender logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">Microsoft Defender</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Built into Windows &amp; Microsoft 365</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+      <a href="https://www.malwarebytes.com" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=malwarebytes.com" alt="Malwarebytes logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">Malwarebytes</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Strong on-demand malware removal</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+      <a href="https://www.eset.com" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=eset.com" alt="ESET logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">ESET</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Lightweight, education licensing tiers</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== GROUP: NETWORK & WEB FILTERING ===================== -->
+  <section id="network-filtering" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 scroll-mt-28">
+    <div class="flex items-center gap-3 mb-8 reveal">
+      <div class="icon-tile"><i class="fa-solid fa-globe text-emerald-300 text-xl"></i></div>
+      <div>
+        <h2 class="text-2xl font-bold text-white">Network &amp; Web Filtering</h2>
+        <p class="text-slate-400 text-sm">Block malicious domains and filter unsafe content on school networks.</p>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=cloudflare.com" alt="Cloudflare logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">Cloudflare (1.1.1.1)</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Free DNS filtering &amp; security</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+      <a href="https://umbrella.cisco.com" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=cisco.com" alt="Cisco Umbrella logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">Cisco Umbrella</h3>
+          <p class="text-slate-400 text-xs mt-0.5">DNS-layer security, education plans</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+      <a href="https://www.opendns.com" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=opendns.com" alt="OpenDNS logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">OpenDNS</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Free tier for basic content filtering</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== GROUP: AWARENESS TRAINING ===================== -->
+  <section id="awareness-training" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 scroll-mt-28">
+    <div class="flex items-center gap-3 mb-8 reveal">
+      <div class="icon-tile"><i class="fa-solid fa-graduation-cap text-amber-300 text-xl"></i></div>
+      <div>
+        <h2 class="text-2xl font-bold text-white">Security Awareness Training</h2>
+        <p class="text-slate-400 text-sm">Build habits with simulated phishing tests and structured curricula.</p>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a href="https://www.knowbe4.com" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=knowbe4.com" alt="KnowBe4 logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">KnowBe4</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Phishing simulations &amp; training</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+      <a href="https://www.cisa.gov/topics/cybersecurity-best-practices/K12cybersecurity" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=cisa.gov" alt="CISA logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">CISA K-12 Toolkit</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Free federal guidance &amp; tip cards</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+      <a href="https://www.commonsense.org/education" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=commonsense.org" alt="Common Sense Education logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">Common Sense Education</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Free digital citizenship curriculum</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== GROUP: BACKUP & BREACH MONITORING ===================== -->
+  <section id="backup-monitoring" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-24 scroll-mt-28">
+    <div class="flex items-center gap-3 mb-8 reveal">
+      <div class="icon-tile"><i class="fa-solid fa-cloud-arrow-up text-rose-300 text-xl"></i></div>
+      <div>
+        <h2 class="text-2xl font-bold text-white">Backup &amp; Breach Monitoring</h2>
+        <p class="text-slate-400 text-sm">Recover from incidents fast, and know if your accounts show up in a breach.</p>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a href="https://drive.google.com" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=drive.google.com" alt="Google Drive logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">Google Drive</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Cloud backup, version history</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+      <a href="https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=onedrive.live.com" alt="Microsoft OneDrive logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">Microsoft OneDrive</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Integrated with Microsoft 365 for Education</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+      <a href="https://haveibeenpwned.com" target="_blank" rel="noopener noreferrer" class="glass-card p-5 flex items-center gap-4 reveal">
+        <div class="logo-tile"><img src="https://www.google.com/s2/favicons?sz=64&domain=haveibeenpwned.com" alt="Have I Been Pwned logo" loading="lazy"></div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-white">Have I Been Pwned</h3>
+          <p class="text-slate-400 text-xs mt-0.5">Free breach-exposure lookup by email</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-slate-500 text-xs"></i>
+      </a>
+    </div>
+    <p class="text-center text-xs text-slate-500 mt-8 reveal">
+      Inclusion here is informational, not an endorsement. Always review a tool's data-privacy terms before
+      deploying it in a school environment.
+    </p>
+  </section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="relative mt-24 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid md:grid-cols-4 gap-10">
+      <div>
+        <a href="index.html" class="flex items-center gap-3 mb-4">
+          <img src="assets/img/logo.svg" alt="Cyber Knights logo" class="h-9 w-9">
+          <span class="text-lg font-extrabold text-white">Cyber <span class="ck-gradient-text">Knights</span></span>
+        </a>
+        <p class="text-slate-400 text-sm leading-relaxed">A practical, publicly accessible cybersecurity guide for schools, colleges, and universities.</p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Sitemap</h4>
+        <ul class="space-y-2.5 text-sm text-slate-400">
+          <li><a href="index.html" class="hover:text-sky-400 transition-colors">Home &amp; About</a></li>
+          <li><a href="knowledge-base.html" class="hover:text-sky-400 transition-colors">Knowledge Base</a></li>
+          <li><a href="best-practices.html" class="hover:text-sky-400 transition-colors">Best Practices</a></li>
+          <li><a href="news.html" class="hover:text-sky-400 transition-colors">News</a></li>
+          <li><a href="tools-resources.html" class="hover:text-sky-400 transition-colors">Tools &amp; Resources</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
+        <ul class="space-y-2.5 text-sm text-slate-400">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-sky-400 w-4"></i> contact@cyberknightshub.org</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-sky-400 w-4"></i> +1 (000) 000-0000</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-sky-400 w-4"></i> Cyber Knights Team — Education Cybersecurity Initiative</li>
+        </ul>
+        <p class="text-xs text-slate-500 mt-2">*Placeholder contact details — replace with your team's real channels.</p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Follow Us</h4>
+        <div class="flex gap-3">
+          <a href="#" aria-label="X / Twitter" class="btn-glass h-10 w-10 rounded-full flex items-center justify-center text-white"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn" class="btn-glass h-10 w-10 rounded-full flex items-center justify-center text-white"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube" class="btn-glass h-10 w-10 rounded-full flex items-center justify-center text-white"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Instagram" class="btn-glass h-10 w-10 rounded-full flex items-center justify-center text-white"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p class="text-xs text-slate-500 mt-4">*Social links are placeholders — connect your official accounts.</p>
+      </div>
+    </div>
+
+    <div class="divider-glow my-10"></div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <p>&copy; <span data-year>2026</span> Cyber Knights. Built for the education community.</p>
+      <p>Concept &amp; content by the Cyber Knights Team.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full btn-glass text-white flex items-center justify-center opacity-0 pointer-events-none transition-opacity">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

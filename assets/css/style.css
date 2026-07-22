@@ -1,0 +1,215 @@
+/* ==========================================================================
+   Cyber Knights — Shared Design System
+   Glassmorphic UI on a dark, animated "cyber" backdrop.
+   ========================================================================== */
+
+:root {
+  --ck-navy: #050b18;
+  --ck-navy-2: #0a1530;
+  --ck-blue: #38bdf8;
+  --ck-blue-2: #6366f1;
+  --ck-purple: #8b5cf6;
+  --ck-gold: #fbbf24;
+  --ck-glass-bg: rgba(255, 255, 255, 0.06);
+  --ck-glass-border: rgba(255, 255, 255, 0.14);
+  --ck-glass-bg-strong: rgba(255, 255, 255, 0.1);
+}
+
+* { scrollbar-width: thin; scrollbar-color: rgba(56,189,248,0.5) transparent; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--ck-blue), var(--ck-purple)); border-radius: 999px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background-color: var(--ck-navy);
+  color: #e5e9f5;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ---------- Animated cyber backdrop ---------- */
+.ck-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(56,189,248,0.20), transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(139,92,246,0.22), transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(99,102,241,0.18), transparent 45%),
+    linear-gradient(180deg, #050b18 0%, #0a1530 50%, #050b18 100%);
+}
+
+.ck-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(56,189,248,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 90%);
+}
+
+.ck-orb {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(70px);
+  z-index: -1;
+  opacity: 0.5;
+  animation: ck-float 14s ease-in-out infinite;
+}
+.ck-orb-1 { width: 380px; height: 380px; top: -100px; left: -100px; background: radial-gradient(circle, var(--ck-blue), transparent 70%); }
+.ck-orb-2 { width: 420px; height: 420px; bottom: -140px; right: -120px; background: radial-gradient(circle, var(--ck-purple), transparent 70%); animation-delay: -6s; }
+.ck-orb-3 { width: 300px; height: 300px; top: 40%; right: 10%; background: radial-gradient(circle, var(--ck-gold), transparent 70%); opacity: 0.18; animation-delay: -3s; }
+
+@keyframes ck-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -25px) scale(1.06); }
+}
+
+/* ---------- Glassmorphism ---------- */
+.glass {
+  background: var(--ck-glass-bg);
+  border: 1px solid var(--ck-glass-border);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.glass-strong {
+  background: var(--ck-glass-bg-strong);
+  border: 1px solid var(--ck-glass-border);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.glass-card {
+  background: var(--ck-glass-bg);
+  border: 1px solid var(--ck-glass-border);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-radius: 1rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56,189,248,0.45);
+  background: rgba(255,255,255,0.09);
+  box-shadow: 0 16px 40px rgba(56,189,248,0.15), 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.glass-nav {
+  background: rgba(5, 11, 24, 0.55);
+  border-bottom: 1px solid var(--ck-glass-border);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+}
+
+/* ---------- Text gradients / accents ---------- */
+.ck-gradient-text {
+  background: linear-gradient(90deg, var(--ck-blue), var(--ck-purple) 55%, var(--ck-gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ck-badge {
+  background: rgba(56,189,248,0.12);
+  border: 1px solid rgba(56,189,248,0.35);
+  color: #7dd3fc;
+}
+
+.ck-nav-link {
+  position: relative;
+  color: #cbd5e1;
+  transition: color 0.2s ease;
+}
+.ck-nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0%; height: 2px;
+  background: linear-gradient(90deg, var(--ck-blue), var(--ck-purple));
+  transition: width 0.25s ease;
+  border-radius: 999px;
+}
+.ck-nav-link:hover { color: #fff; }
+.ck-nav-link:hover::after,
+.ck-nav-link.active::after { width: 100%; }
+.ck-nav-link.active { color: #fff; }
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  background: linear-gradient(90deg, var(--ck-blue), var(--ck-blue-2));
+  box-shadow: 0 6px 24px rgba(56,189,248,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(56,189,248,0.5); filter: brightness(1.08); }
+
+.btn-glass {
+  background: var(--ck-glass-bg);
+  border: 1px solid var(--ck-glass-border);
+  backdrop-filter: blur(12px);
+  transition: all 0.2s ease;
+}
+.btn-glass:hover { background: rgba(255,255,255,0.14); border-color: rgba(56,189,248,0.5); transform: translateY(-2px); }
+
+/* ---------- Icon tile ---------- */
+.icon-tile {
+  width: 3.25rem; height: 3.25rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 0.9rem;
+  background: linear-gradient(135deg, rgba(56,189,248,0.22), rgba(139,92,246,0.22));
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+/* ---------- Placeholder media blocks (Knowledge Base) ---------- */
+.media-placeholder {
+  aspect-ratio: 16 / 9;
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.045) 0 2px, transparent 2px 14px),
+    linear-gradient(135deg, rgba(56,189,248,0.14), rgba(139,92,246,0.14));
+  border: 1px dashed rgba(255,255,255,0.25);
+  border-radius: 0.85rem;
+}
+
+/* ---------- Coming soon ribbon ---------- */
+.ribbon {
+  position: absolute;
+  top: 0.75rem; right: 0.75rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(251,191,36,0.15);
+  border: 1px solid rgba(251,191,36,0.4);
+  color: #fcd34d;
+}
+
+/* ---------- Fade-in on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+/* ---------- Stat counters ---------- */
+.stat-number { font-variant-numeric: tabular-nums; }
+
+/* ---------- Mobile menu ---------- */
+#mobile-menu { transition: max-height 0.35s ease, opacity 0.3s ease; }
+
+/* ---------- Utility ---------- */
+.divider-glow {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(56,189,248,0.5), transparent);
+}
+
+.logo-tile {
+  width: 3.5rem; height: 3.5rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 0.9rem;
+  background: rgba(255,255,255,0.9);
+}
+.logo-tile img, .logo-tile i { max-width: 70%; max-height: 70%; }
