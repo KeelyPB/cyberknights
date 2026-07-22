@@ -13,6 +13,36 @@
   --ck-glass-bg: rgba(255, 255, 255, 0.06);
   --ck-glass-border: rgba(255, 255, 255, 0.14);
   --ck-glass-bg-strong: rgba(255, 255, 255, 0.1);
+
+  --ck-text: #e5e9f5;
+  --ck-text-muted: #cbd5e1;
+  --ck-nav-bg: rgba(5, 11, 24, 0.55);
+  --ck-orb-opacity: 0.5;
+  --ck-orb-opacity-3: 0.18;
+  --ck-scrollbar-track: transparent;
+
+  --ck-white-mix: rgba(255, 255, 255, 0.14);
+  --ck-white-mix-soft: rgba(255, 255, 255, 0.08);
+  --ck-hairline: rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- Light theme ---------- */
+:root[data-theme="light"] {
+  --ck-navy: #eef2f9;
+  --ck-navy-2: #ffffff;
+  --ck-glass-bg: rgba(15, 23, 42, 0.045);
+  --ck-glass-border: rgba(15, 23, 42, 0.12);
+  --ck-glass-bg-strong: rgba(15, 23, 42, 0.06);
+
+  --ck-text: #0f172a;
+  --ck-text-muted: #334155;
+  --ck-nav-bg: rgba(255, 255, 255, 0.65);
+  --ck-orb-opacity: 0.22;
+  --ck-orb-opacity-3: 0.12;
+
+  --ck-white-mix: rgba(15, 23, 42, 0.08);
+  --ck-white-mix-soft: rgba(15, 23, 42, 0.05);
+  --ck-hairline: rgba(15, 23, 42, 0.18);
 }
 
 * { scrollbar-width: thin; scrollbar-color: rgba(56,189,248,0.5) transparent; }
@@ -21,11 +51,12 @@
 ::-webkit-scrollbar-track { background: transparent; }
 
 html { scroll-behavior: smooth; }
+html, body { background-color: var(--ck-navy); transition: background-color 0.3s ease; }
 
 body {
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
   background-color: var(--ck-navy);
-  color: #e5e9f5;
+  color: var(--ck-text);
   position: relative;
   overflow-x: hidden;
 }
@@ -39,7 +70,16 @@ body {
     radial-gradient(circle at 15% 20%, rgba(56,189,248,0.20), transparent 40%),
     radial-gradient(circle at 85% 15%, rgba(139,92,246,0.22), transparent 45%),
     radial-gradient(circle at 50% 90%, rgba(99,102,241,0.18), transparent 45%),
-    linear-gradient(180deg, #050b18 0%, #0a1530 50%, #050b18 100%);
+    linear-gradient(180deg, var(--ck-navy) 0%, var(--ck-navy-2) 50%, var(--ck-navy) 100%);
+  transition: background 0.3s ease;
+}
+
+:root[data-theme="light"] .ck-bg {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(56,189,248,0.12), transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(139,92,246,0.10), transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(99,102,241,0.08), transparent 45%),
+    linear-gradient(180deg, var(--ck-navy) 0%, var(--ck-navy-2) 50%, var(--ck-navy) 100%);
 }
 
 .ck-grid {
@@ -53,17 +93,23 @@ body {
   mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 90%);
 }
 
+:root[data-theme="light"] .ck-grid {
+  background-image:
+    linear-gradient(rgba(2,132,199,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(2,132,199,0.07) 1px, transparent 1px);
+}
+
 .ck-orb {
   position: fixed;
   border-radius: 999px;
   filter: blur(70px);
   z-index: -1;
-  opacity: 0.5;
+  opacity: var(--ck-orb-opacity);
   animation: ck-float 14s ease-in-out infinite;
 }
 .ck-orb-1 { width: 380px; height: 380px; top: -100px; left: -100px; background: radial-gradient(circle, var(--ck-blue), transparent 70%); }
 .ck-orb-2 { width: 420px; height: 420px; bottom: -140px; right: -120px; background: radial-gradient(circle, var(--ck-purple), transparent 70%); animation-delay: -6s; }
-.ck-orb-3 { width: 300px; height: 300px; top: 40%; right: 10%; background: radial-gradient(circle, var(--ck-gold), transparent 70%); opacity: 0.18; animation-delay: -3s; }
+.ck-orb-3 { width: 300px; height: 300px; top: 40%; right: 10%; background: radial-gradient(circle, var(--ck-gold), transparent 70%); opacity: var(--ck-orb-opacity-3); animation-delay: -3s; }
 
 @keyframes ck-float {
   0%, 100% { transform: translate(0, 0) scale(1); }
@@ -103,10 +149,11 @@ body {
 }
 
 .glass-nav {
-  background: rgba(5, 11, 24, 0.55);
+  background: var(--ck-nav-bg);
   border-bottom: 1px solid var(--ck-glass-border);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 /* ---------- Text gradients / accents ---------- */
@@ -122,10 +169,11 @@ body {
   border: 1px solid rgba(56,189,248,0.35);
   color: #7dd3fc;
 }
+:root[data-theme="light"] .ck-badge { color: #0369a1; }
 
 .ck-nav-link {
   position: relative;
-  color: #cbd5e1;
+  color: var(--ck-text-muted);
   transition: color 0.2s ease;
 }
 .ck-nav-link::after {
@@ -137,10 +185,22 @@ body {
   transition: width 0.25s ease;
   border-radius: 999px;
 }
-.ck-nav-link:hover { color: #fff; }
+.ck-nav-link:hover { color: var(--ck-text); }
 .ck-nav-link:hover::after,
 .ck-nav-link.active::after { width: 100%; }
-.ck-nav-link.active { color: #fff; }
+.ck-nav-link.active { color: var(--ck-text); }
+
+/* ---------- Theme toggle ---------- */
+.theme-toggle {
+  position: relative;
+  width: 2.5rem; height: 2.5rem;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ck-text);
+}
+.theme-toggle .fa-sun { display: none; }
+.theme-toggle .fa-moon { display: block; }
+:root[data-theme="light"] .theme-toggle .fa-sun { display: block; }
+:root[data-theme="light"] .theme-toggle .fa-moon { display: none; }
 
 /* ---------- Buttons ---------- */
 .btn-primary {
@@ -156,7 +216,7 @@ body {
   backdrop-filter: blur(12px);
   transition: all 0.2s ease;
 }
-.btn-glass:hover { background: rgba(255,255,255,0.14); border-color: rgba(56,189,248,0.5); transform: translateY(-2px); }
+.btn-glass:hover { background: var(--ck-white-mix); border-color: rgba(56,189,248,0.5); transform: translateY(-2px); }
 
 /* ---------- Icon tile ---------- */
 .icon-tile {
@@ -164,16 +224,16 @@ body {
   display: flex; align-items: center; justify-content: center;
   border-radius: 0.9rem;
   background: linear-gradient(135deg, rgba(56,189,248,0.22), rgba(139,92,246,0.22));
-  border: 1px solid rgba(255,255,255,0.14);
+  border: 1px solid var(--ck-white-mix);
 }
 
 /* ---------- Placeholder media blocks (Knowledge Base) ---------- */
 .media-placeholder {
   aspect-ratio: 16 / 9;
   background:
-    repeating-linear-gradient(135deg, rgba(255,255,255,0.045) 0 2px, transparent 2px 14px),
+    repeating-linear-gradient(135deg, var(--ck-white-mix-soft) 0 2px, transparent 2px 14px),
     linear-gradient(135deg, rgba(56,189,248,0.14), rgba(139,92,246,0.14));
-  border: 1px dashed rgba(255,255,255,0.25);
+  border: 1px dashed var(--ck-hairline);
   border-radius: 0.85rem;
 }
 
@@ -189,6 +249,7 @@ body {
   border: 1px solid rgba(251,191,36,0.4);
   color: #fcd34d;
 }
+:root[data-theme="light"] .ribbon { color: #92400e; }
 
 /* ---------- Fade-in on scroll ---------- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -213,3 +274,37 @@ body {
   background: rgba(255,255,255,0.9);
 }
 .logo-tile img, .logo-tile i { max-width: 70%; max-height: 70%; }
+
+/* ==========================================================================
+   Light-theme overrides for hardcoded Tailwind utility colors.
+   The markup was authored dark-only, so these repoint the fixed-color
+   utilities (text-white, text-slate-400, etc.) at theme-aware values
+   instead of adding dark:/light: variants to every element by hand.
+   ========================================================================== */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+:root:not([data-theme="light"]) {
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] .text-white,
+:root[data-theme="light"] .text-slate-100 { color: #0f172a; }
+:root[data-theme="light"] .text-slate-200 { color: #1e293b; }
+:root[data-theme="light"] .text-slate-300 { color: #334155; }
+:root[data-theme="light"] .text-slate-400 { color: #475569; }
+:root[data-theme="light"] .text-slate-500 { color: #64748b; }
+
+:root[data-theme="light"] .text-sky-300,
+:root[data-theme="light"] .text-sky-300\/70,
+:root[data-theme="light"] .text-sky-400,
+:root[data-theme="light"] .hover\:text-sky-400:hover { color: #0369a1; }
+:root[data-theme="light"] .text-purple-300 { color: #7c3aed; }
+:root[data-theme="light"] .text-amber-300 { color: #b45309; }
+:root[data-theme="light"] .text-emerald-300 { color: #047857; }
+:root[data-theme="light"] .text-red-400 { color: #dc2626; }
+:root[data-theme="light"] .text-rose-300 { color: #be123c; }
+
+:root[data-theme="light"] .bg-white\/5,
+:root[data-theme="light"] .hover\:bg-white\/5:hover { background-color: rgba(15, 23, 42, 0.05); }
+:root[data-theme="light"] .border-white\/10 { border-color: rgba(15, 23, 42, 0.12); }

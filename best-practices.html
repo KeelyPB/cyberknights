@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem('ck-theme');
+    var theme = stored || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {}
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Best Practices | Cyber Knights</title>
 <meta name="description" content="Five downloadable checklists to help schools, teachers, and students assess and improve their cyber hygiene.">
@@ -46,16 +55,19 @@
         <a href="tools-resources.html" data-nav-link="tools-resources.html" class="ck-nav-link">Tools &amp; Resources</a>
       </nav>
 
-      <div class="hidden md:flex items-center">
-        <a href="#checklists" class="btn-primary text-sm font-semibold text-white px-5 py-2.5 rounded-full inline-flex items-center gap-2">
+      <div class="flex items-center gap-2 md:gap-4">
+        <button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" class="theme-toggle btn-glass h-10 w-10 rounded-full flex items-center justify-center">
+          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <a href="#checklists" class="hidden md:inline-flex btn-primary text-sm font-semibold text-white px-5 py-2.5 rounded-full items-center gap-2">
           <i class="fa-solid fa-download text-xs"></i> Get the Checklists
         </a>
+        <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden btn-glass h-10 w-10 rounded-lg flex items-center justify-center text-white">
+          <i class="fa-solid fa-bars icon-open"></i>
+          <i class="fa-solid fa-xmark icon-close hidden"></i>
+        </button>
       </div>
-
-      <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden btn-glass h-10 w-10 rounded-lg flex items-center justify-center text-white">
-        <i class="fa-solid fa-bars icon-open"></i>
-        <i class="fa-solid fa-xmark icon-close hidden"></i>
-      </button>
     </div>
 
     <div id="mobile-menu" class="md:hidden hidden pb-4">
